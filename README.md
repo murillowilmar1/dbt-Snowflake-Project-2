@@ -150,6 +150,7 @@ Esto permite mantener consistencia, reducir duplicación de código y escalar el
 
 # 📂 Estructura del Proyecto
 
+```bash
 dbt_saas_demo/
 ├─ macros/
 │  ├─ cleaning.sql
@@ -165,3 +166,5 @@ dbt_saas_demo/
 ├─ analyses/
 ├─ seeds/
 └─ docs/
+```
+
