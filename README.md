@@ -1,1 +1,0 @@
-# dbt-Snowflake-Project-2
