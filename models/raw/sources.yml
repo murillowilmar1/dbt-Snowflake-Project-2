@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DBT_SAAS_DEMO
+    schema: RAW
+    description: "Raw ingestion layer from SaaS platform"
+
+    tables:
+      - name: raw_users
+        description: "Raw users table from source system"
+
+      - name: raw_plans
+        description: "Raw accounts table"
+
+      - name: raw_subscriptions
+        description: "Raw subscriptions table"
+
+      - name: raw_events
+        description: "User behavioral events"
+
+      - name: raw_payments
+        description: "raw payment table"

@@ -1,0 +1,92 @@
+version: 2
+
+models:
+
+  # ========================
+  # USERS
+  # ========================
+  - name: stg_saas__users
+    columns:
+      - name: user_id
+        tests:
+          - not_null
+          - unique
+
+      - name: email
+        tests:
+          - not_null
+
+  # ========================
+  # PLANS
+  # ========================
+  - name: stg_saas__plans
+    columns:
+      - name: plan_id
+        tests:
+          - not_null
+          - unique
+
+      - name: billing_period
+        tests:
+          - accepted_values:
+              values: ['MONTHLY', 'YEARLY', '_SIN_PERIOD']
+
+  # ========================
+  # SUBSCRIPTIONS
+  # ========================
+  - name: stg_saas__subscriptions
+    columns:
+      - name: subscription_id
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        tests:
+          - not_null
+
+      - name: plan_id
+        tests:
+          - not_null
+
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['ACTIVE', 'CANCELED', 'PAST_DUE', '_SIN_STATUS']
+
+  # ========================
+  # PAYMENTS
+  # ========================
+  - name: stg_saas__payments
+    columns:
+      - name: payment_id
+        tests:
+          - not_null
+          - unique
+
+      - name: paid_date
+        tests:
+          - not_null
+
+      - name: payment_status
+        tests:
+          - accepted_values:
+              values: ['PAID', 'FAILED', 'REFUNDED', '_SIN_STATUS']
+
+  # ========================
+  # EVENTS
+  # ========================
+  - name: stg_saas__events
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+          - unique
+
+      - name: user_id
+        tests:
+          - not_null
+
+      - name: event_ts
+        tests:
+          - not_null

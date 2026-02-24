@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: int_user_current
+    columns:
+      - name: user_id
+        tests: [not_null, unique]
+
+  - name: int_subscription_base
+    columns:
+      - name: subscription_id
+        tests: [not_null, unique]
+      - name: user_id
+        tests: [not_null]
+      - name: plan_id
+        tests: [not_null]
+
+  - name: int_payments_enriched
+    columns:
+      - name: payment_id
+        tests: [not_null, unique]
+      - name: user_id
+        tests: [not_null]
+      - name: subscription_id
+        tests: [not_null]
+      - name: paid_date
+        tests: [not_null]
+
+  - name: int_mrr_monthly
+    columns:
+      - name: mrr_month
+        tests: [not_null]
+      - name: user_id
+        tests: [not_null]
