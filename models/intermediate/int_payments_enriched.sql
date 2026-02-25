@@ -19,6 +19,10 @@ select
     p.user_id,
     p.paid_date,
     p.payment_status,
+    case
+    when payment_status = 'PAID' then true
+    else false
+    end as is_successful_payment, 
     p.updated_at as payment_updated_at,
 
     -- amounts

@@ -20,6 +20,10 @@ select
     s.start_date,
     s.cancel_date,
     s.status,
+    case 
+    when status = 'ACTIVE' and cancel_date is null then true
+    else false
+    end as is_active_subscription,
     s.discount_pct,
     s.updated_at as subscription_updated_at,
 

@@ -1,0 +1,38 @@
+version: 2
+
+exposures:
+  - name: saas_executive_dashboard
+    label: SaaS Executive Dashboard
+    type: dashboard
+    maturity: medium
+    url: https://tu-bi-tool/saas-executive
+
+    description: >
+      Dashboard ejecutivo del negocio SaaS.
+      Incluye métricas clave como:
+      - MRR mensual
+      - Revenue mensual
+      - Cohort analysis
+      - Usuarios activos
+
+      Este dashboard es consumido por el equipo ejecutivo
+      para monitoreo de crecimiento y salud del negocio.
+
+    depends_on:
+      # Métricas consolidadas (lo que BI debería consumir)
+      - ref('mart_metrics__mrr_monthly')
+      - ref('mart_metrics__revenue_monthly')
+
+      # Facts base
+      - ref('fct_mrr')
+      - ref('fct_payments')
+      - ref('fct_cohorts')
+
+      # Dimensiones
+      - ref('dim_user')
+      - ref('dim_plan')
+      - ref('dim_date')
+
+    owner:
+      name: Data Team
+      email: data@company.com
