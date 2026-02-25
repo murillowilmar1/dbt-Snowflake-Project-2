@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: mart_metrics__mrr_monthly
+    columns:
+      - name: mrr_month
+        tests: [not_null]
+      - name: total_mrr_usd
+        tests: [not_null]
+
+  - name: mart_metrics__revenue_monthly
+    columns:
+      - name: revenue_month
+        tests: [not_null]
+      - name: revenue_usd
+        tests: [not_null]
