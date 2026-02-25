@@ -35,7 +35,7 @@ Tablas fuente:
 
 📌 Diagrama relacional del modelo RAW:
 
-![RAW Diagram](docs/raw_diagram.png)
+<img width="1128" height="695" alt="image" src="https://github.com/user-attachments/assets/1c559bfb-083f-4b38-8a26-6f99d19bab8c" />
 
 ---
 
