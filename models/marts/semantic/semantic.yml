@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: semantic_executive_kpis
+    description: Dataset consolidado para dashboard ejecutivo.
+
+  - name: semantic_revenue_analysis
+    description: Revenue segmentado por país y plan.
+
+  - name: semantic_cohorts
+    description: Dataset para análisis de cohort y retención.
